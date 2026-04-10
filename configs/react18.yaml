@@ -1,0 +1,23 @@
+extends:
+  - './main.yaml'
+
+rules:
+  # React 17+ automatic JSX transform - no need to import React
+  react/jsx-uses-react: 'off'
+  react/react-in-jsx-scope: 'off'
+
+  # Enzyme adapter migration guidance
+  no-restricted-imports:
+    - error
+    - paths:
+        - name: 'enzyme-adapter-react-16'
+          message: 'Remove, use @cfaester/enzyme-adapter-react-18 for React 18 compatibility'
+        - name: 'react-dom/test-utils'
+          message: 'Use react-dom/client createRoot instead for React 18'
+
+  # React Hooks rules (explicit to ensure they remain even if base config changes)
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
+
+  # React 18 deprecates defaultProps on function components
+  react/require-default-props: off

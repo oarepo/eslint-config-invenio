@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2022 CERN.
+ * SPDX-License-Identifier: MIT
+ */
+
 module.exports = {
     printWidth: 88,  // as in Black for Python
     tabWidth: 2,
